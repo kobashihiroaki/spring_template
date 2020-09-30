@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>top page</title>
+	<title>find page</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<style>
 		h1 {
@@ -27,14 +27,23 @@
 			color: black;
 			background:#f0f0f0;
 		}
-		.err {
-			color: red;
-		}
 	</style>
 </head>
 <body>
-	<h1 th:text="#{content.title}">Hello page</h1>
+	<h1 th:text="#{content.title}">find page</h1>
 	<p th:text="${msg}"></p>
+	<table>
+		<form action="/find" method="post">
+			<tr>
+				<td>FIND:</td>
+				<td><input type="text" name="fstr" size="20" th:value="${value}"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" /></td>
+			</tr>
+		</form>
+	</table>
 	<table>
 		<tr>
 			<th>ID</th>
